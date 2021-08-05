@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -39,7 +40,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-
-app.listen(3000, () => console.log('API listening on port 3000'))
+app.listen(27017, () => console.log('API listening on port 27017'))
 
 module.exports = app;
