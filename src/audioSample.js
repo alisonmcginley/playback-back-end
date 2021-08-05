@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/audioSample');
+// mongoose.connect('mongodb://localhost:27017/audioSample');
 const Schema = mongoose.Schema;
 
 const AudioSchema = new Schema ({
@@ -9,7 +9,8 @@ const AudioSchema = new Schema ({
     name: {
         type: String
     },
-    instrument: { type: Schema.Types.ObjectId, ref: 'instrument' }
+
+    instrument: { type: Schema.Types.String, ref: 'instrument' }
 });
 
 const AudioSample = mongoose.model('audioSample', AudioSchema);

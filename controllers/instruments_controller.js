@@ -1,8 +1,11 @@
 const Instrument = require("../src/instrument");
 
 module.exports = {
-    greeting(req, res) {
-        res.send({ hi: 'there'});
+    get(req, res) {
+        const name = req.body["name"];
+        Instrument.findOne({name: name}).exec(function(err, instruments){
+            res.send(instruments)
+        });
     },
 
     create(req, res, next) {
