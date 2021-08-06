@@ -9,7 +9,9 @@ const AudioSchema = new Schema ({
     name: {
         type: String
     },
-
+    AUDIO_URI:{
+        type: String
+    },
     instrument: { type: Schema.Types.String, ref: 'instrument' }
 });
 
