@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/instrument');
+const AudioSchema = require('./audioSample')
 
 const Schema = mongoose.Schema;
 
@@ -8,11 +9,9 @@ const InstrumentSchema = new Schema({
         type: String, 
         required: [true, 'Name is required.'],
     },
-    audioSamples: [{
-        type: Schema.Types.ObjectId,
-        ref: 'audioSample'
-    }]
+    audioSamples: [AudioSchema]
 });
+
 const Instrument = mongoose.model('instrument', InstrumentSchema);
 
 module.exports = Instrument;

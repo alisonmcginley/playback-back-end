@@ -11,10 +11,10 @@ const AudioSchema = new Schema ({
     },
     AUDIO_URI:{
         type: String
-    },
-    instrument: { type: Schema.Types.String, ref: 'instrument' }
+    }
+    // instrument: { type: Schema.Types.String, ref: 'instrument' }
 });
 
-const AudioSample = mongoose.model('audioSample', AudioSchema);
+// const AudioSample = mongoose.model('audioSample', AudioSchema);
 
-module.exports = AudioSample;
+module.exports = AudioSchema;

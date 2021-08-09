@@ -29,7 +29,7 @@ router.post('/instruments', asyncHandler(async (req, res) => {
 //   const instrument = await InstrumentsController
 // }))
 
-router.post('/instruments/:name', asyncHandler(async (req, res) => {
+router.put('/instruments/:name', asyncHandler(async (req, res) => {
   const audioSample = await AudioController.create(req, res);
 }))
 
