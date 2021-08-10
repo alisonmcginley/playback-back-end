@@ -15,7 +15,7 @@ function asyncHandler(cb){
 
 // get an instrument & its audio samples
 router.get('/instruments', asyncHandler(async(req, res)=> {
-  const instruments = await InstrumentsController.get(req, res);
+  const instruments = await InstrumentsController.getAll(req, res);
   // return res.send(instruments)
   
 }))
