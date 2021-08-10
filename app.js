@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
+var corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200
+}
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,9 +25,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 
-app.get('/instruments', function(req, res, next) {
-  res.json(({msg: 'This is cors enabled'}))
-})
+// app.get('/instruments', cors(corsOptions), function(req, res, next) {
+//   res.json(({msg: 'This is cors enabled'}))
+// })
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

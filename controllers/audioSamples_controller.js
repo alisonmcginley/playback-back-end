@@ -5,14 +5,14 @@ const mongoose = require('mongoose');
 
 module.exports = {
     create(req, res, next) {
-        let newSample = new AudioSample(req.body)
-        newSample.save()
+        // let newSample = new AudioSample(req.body)
+        // newSample.save()
         
         Instrument.findOneAndUpdate(
             {name:req.body.instrument},
-            {$push: {audioSamples: newSample}}
+            {$push: {audioSamples: req.body}}
         )
-        .then(audio => res.send(audio))
+        .then(audio => res.send(audio.audioSamples))
         .catch(next)
     }
 }

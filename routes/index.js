@@ -15,7 +15,7 @@ function asyncHandler(cb){
 
 // get an instrument & its audio samples
 router.get('/instruments', asyncHandler(async(req, res)=> {
-  const instruments = await InstrumentsController.get(req, res);
+  const instruments = await InstrumentsController.getAll(req, res);
   // return res.send(instruments)
   
 }))
@@ -29,7 +29,7 @@ router.post('/instruments', asyncHandler(async (req, res) => {
 //   const instrument = await InstrumentsController
 // }))
 
-router.post('/instruments/:name', asyncHandler(async (req, res) => {
+router.put('/instruments/:name', asyncHandler(async (req, res) => {
   const audioSample = await AudioController.create(req, res);
 }))
 
