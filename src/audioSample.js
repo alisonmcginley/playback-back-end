@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 // mongoose.connect('mongodb://localhost:27017/audioSample');
 const Schema = mongoose.Schema;
 
+// schema to allow audio to serve as subdocument in instrument
 const AudioSchema = new Schema ({
     index: {
         type : Number
@@ -12,9 +13,7 @@ const AudioSchema = new Schema ({
     AUDIO_URI:{
         type: String
     }
-    // instrument: { type: Schema.Types.String, ref: 'instrument' }
 });
 
-// const AudioSample = mongoose.model('audioSample', AudioSchema);
 
 module.exports = AudioSchema;

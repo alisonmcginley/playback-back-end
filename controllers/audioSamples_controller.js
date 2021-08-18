@@ -5,9 +5,6 @@ const mongoose = require('mongoose');
 
 module.exports = {
     create(req, res, next) {
-        // let newSample = new AudioSample(req.body)
-        // newSample.save()
-        
         Instrument.findOneAndUpdate(
             {name:req.body.instrument},
             {$push: {audioSamples: req.body}}

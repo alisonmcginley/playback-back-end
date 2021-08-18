@@ -2,6 +2,7 @@ const assert = require('assert');
 const request = require('supertest');
 const router = require('../routes/index')
 
+// tests instrument endpoint
 describe('the express app', () => {
     it('handles a GET request to /instrument', (done) => {
         request(router)
@@ -9,5 +10,6 @@ describe('the express app', () => {
             .end((err, response) => {
                 console.log(response)
             })
+        done()
     })
 })

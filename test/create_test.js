@@ -1,7 +1,7 @@
 const assert = require('assert');
 const Instrument = require('../src/instrument');
-const AudioSample = require('../src/audioSample');
 
+// checks create record in mongo db
 describe('Creating records', () => {
     it('saves an instrument', (done) => {
     const drums = new Instrument ({

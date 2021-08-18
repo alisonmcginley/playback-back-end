@@ -3,6 +3,7 @@ var router = express.Router();
 const InstrumentsController = require('../controllers/instruments_controller');
 const AudioController = require('../controllers/audioSamples_controller');
 
+// async helper to await callback
 function asyncHandler(cb){
   return async (req,res, next) => {
       try {
@@ -24,10 +25,6 @@ router.post('/instruments', asyncHandler(async (req, res) => {
   const instrument = await InstrumentsController.create(req, res);
 
 }))
-
-// router.get('instruments/:name', asyncHandler(async (req, res) => {
-//   const instrument = await InstrumentsController
-// }))
 
 router.put('/instruments/:name', asyncHandler(async (req, res) => {
   const audioSample = await AudioController.create(req, res);

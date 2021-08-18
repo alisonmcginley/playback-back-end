@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/instrument');
 const AudioSchema = require('./audioSample')
-
 const Schema = mongoose.Schema;
 
 const InstrumentSchema = new Schema({
